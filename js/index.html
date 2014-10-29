@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+    <title>jQuery UI Example Page</title>
+    <link type="text/css" href="css/redmond/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui-1.8.23.custom.min.js"></script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-25444755-1']);
+        _gaq.push(['_trackPageview']);
+
+        $(function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+          // Tabs
+          $('#tabs').tabs();
+        });
+    </script>
+    <style type="text/css">
+
+#header {
+ color: #ffffff;
+ width: 902px;
+ padding: 10px;
+ height: 175px;
+ margin: 10px 0px 0px 0px;
+ background: #000000;
+ background-image: url("./img/moai.jpg");
+ background-position: right top;
+ background-repeat: no-repeat;
+}
+
+#tabs {
+  width: 915px;
+}
+
+h2 {
+  height:24px;margin:0px 0px 5px 0px;padding:8px 0px 0px 15px;
+  font-size:16px;font-weight:bold;color:#444444;
+  background-image:url(./img/head016_05.png);
+}
+
+h3 {
+ height:24px;margin:0px 0px 5px 0px;padding:8px 0px 0px 15px;
+ font-size:14px;font-weight:bold;color:#444444;
+ background-image:url(./img/head017_05.png);
+ background-repeat: no-repeat;
+}
+
+#footer { 
+ width: 902px;
+ clear: both;
+ font-size:10px;
+ color: #ffffff;
+ margin: 10px;
+ background: #000000;
+ margin: 0px 0px 10px 0px;
+ padding: 10px;
+}
+.clear { clear: both; background: none; }
+
+table#fee {
+ width: 400px;
+ border-collapse: collapse;
+ border-spacing: 0;
+ border-top: 1px solid #444444;
+ border-left: 1px solid #444444;
+ background: #fff;
+}
+
+table {
+ width: 100%;
+ border-collapse: collapse;
+ border-spacing: 0;
+ border-top: 1px solid #444444;
+ border-left: 1px solid #444444;
+ background: #fff;
+}
+
+td#key {
+ width: 80px;
+ padding: 5px;
+ border-right: 1px solid #444444;
+ border-bottom: 1px solid #444444;
+ background: #87CEFA;
+ color: #000000;
+ font-size: 12px;
+ font-weight: normald;
+ text-align: center;
+}
+td#link {
+ width: 150px;
+ padding: 5px;
+ border-right: 1px solid #444444;
+ border-bottom: 1px solid #444444;
+ background: #87CEFA;
+ color: #000000;
+ font-size: 12px;
+ font-weight: normald;
+ text-align: left
+}
+td {
+ padding: 5px;
+ border-right: 1px solid #444444;
+ border-bottom: 1px solid #444444;
+ font-size: 12px;
+}
+
+/* begin styles for RSS Feed */
+.rss_box {
+	 margin: 3px 2%;
+	 padding: 0px;
+	 width: 460px;
+	 background-color: #fff;
+}
+
+.rss_title, rss_title a {
+	font-size: 12px;
+	font-weight:bold;
+	margin: 5px 0;
+	padding: 0;
+	letter-spacing: 1px;
+}
+
+
+.rss_items {
+	margin: 3px;
+	padding: 0px;
+}
+
+.rss_item  {
+	padding-right: 0px;
+	padding-left: 0px;
+	font-weight : normal; 
+	font-size: 8px;
+	padding-bottom: 2px;
+	color: #999;
+	word-break: break-all;
+}
+
+.rss_item a:link, .rss_item a:visited, .rss_item a:active {
+	font-weight: bold;
+	font-size: 14px;
+	color: #666;
+	text-decoration : none;
+}
+
+.rss_item a:hover { 
+	font-weight: bold;
+	font-size: 14px;
+	text-decoration : underline;
+	color: #333;
+}
+
+.rss_date {
+	font-size: 10px;
+	font-weight : normal;
+	color: #999;
+}
+      body{ font: 77.5% "Trebuchet MS", sans-serif; margin: 50px;}
+      .demoHeaders { margin-top: 2em; }
+      #dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+      #dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+      ul#icons {margin: 0; padding: 0;}
+      ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+      ul#icons span.ui-icon {float: left; margin: 0 4px;}
+      ul#tabchange {
+        width: 906px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="header">
+      <h1>日本国際テコンドー協会公認 金成哲テコンドー道場</h1>
+      <p>埼玉県川口市、蕨市のテコンドークラブです</p>
+      <p>未経験者歓迎。初心者から丁寧に指導します！</p>
+      <ul>
+	<li>月曜日：蕨クラブ</li>
+	<li>水曜日：川口クラブ</li>
+      </ul>
+      <p>&nbsp;→練習日程詳細は<a href="./schedule.html">練習スケジュール</a>をご覧下さい。</p>
+    </div>
+
+    <!-- Tabs -->
+    <div id="tabs">
+      <ul id="tabchange">
+	<li><a href="#top">トップ</a></li>
+	<li><a href="#1day">見学・体験練習</a></li>
+	<li><a href="#admission">月謝・諸経費</a></li>
+	<li><a href="#instructor">指導員紹介</a></li>
+	<li><a href="#schedule">スケジュール</a></li>
+	<li><a href="#access">交通アクセス</a></li>
+	<li><a href="#link">リンク</a></li>
+      </ul>
+      <div id="top">
+	<!-- サークル会員 -->
+	<br>
+	<h2>サークル会員募集開始！</h2>
+	
+	<!-- 入会キャンペーン -->
+	<!--
+	    <br>
+	    <h2>お得なウェブ入会クーポン　<S><font color="#ff0000">先着７名様</font>まで！</S></h2>
+	    <h3>ホームページから入会の方にお得な２大クーポン</h3>
+	    <font size=+5 color="#ff0000"><p>おかげさまで満員御礼！</p></font>
+	  <p>おかげさまで、Web入会クーポンは定員となりました。</p>
+	  <img src="./img/web-coupon.jpg" alt="ウェブクーポン 入会金・月謝初回無料！"/> 
+	  <br>
+-->
+	  <!-- ブログ -->
+	  <br>
+	  <h2>最新情報！</h2>
+	  <h3>道場の<a href="http://ameblo.jp/tkdksc/" target="_blank">ブログ</a>です。最新情報がここに表示されます。</h3><br>
+	  <div style="padding:10px;margin-bottom:10px;"> 
+	    <script language="JavaScript"
+		    src="http://www.moondakota.com/feed/generate.php?src=http%3A%2F%2Ffeedblog.ameba.jp%2Frss%2Fameblo%2Ftkdksc%2Frss20.xml&chan=n&num=5&tit=0&desc=0&date=y&targ=y&oe=Shift_JIS"
+		    type="text/javascript">
+	    </script>
+	    <noscript>
+	      <a href="http://www.moondakota.com/feed/generate.php?src=http%3A%2F%2Ffeedblog.ameba.jp%2Frss%2Fameblo%2Ftkdksc%2Frss20.xml&chan=n&num=5&tit=0&desc=0&date=y&targ=y&oe=Shift_JIS&html=y">RSS Feedを見る</a>
+	    </noscript>
+	  </div> <!-- ブログ -->
+
+	  <!-- -->
+	  <h2>テコンドーで一緒に汗を流しませんか？</h2>
+	  <h3>テコンドーって？</h3>
+	  <br>
+	  <p>テコンドーは韓国生まれの武道です。</p>
+	  <p>なんといっても、柔軟な体から繰り出される華麗な足技が特徴です。</p>
+	  <br>
+	  <img src="./img/high-kick.jpg">
+	  <br><br><br>
+
+	  <h3>まずは、<a href="./1day.html">体験練習</a>から！</h3>
+	  <br>
+	  <p>興味はあるけれど、スポーツ経験がない、体が硬いので無理そう・・・</p>
+	  <p>心配はいりません。誰でも最初は初心者！むしろ最初から柔らかい人のほうが「まれ」です。</p>
+	  <p>まずは、体験練習でテコンドーを体験してみませんか？</p>
+	  <p>武道初心者、経験者問わず基本から丁寧に指導します。</p>
+	  <br>
+	  <br>
+      </div>
+      <div id="1day">
+	  <br>
+	  <h2>体験練習・見学</h2><br>
+
+	  <table>
+	    <tr>
+	      <td colspan="2"><img src="./img/1day-0.jpg" alt="実際に体験練習をやってみよう！"></td>
+	    </tr>
+	    <tr>
+	      <td><img src="./img/1day-1.jpg"></td>
+	      <td>
+		<h3>ステップ１　　電話</h3>
+		<br>
+		<p>まずはお電話で訪問日、希望道場（川口or蕨）、体験or見学どちらを希望するのか？、性別、年齢、訪問予定時刻をお伝え下さい。</p>
+		<br>
+		<p>体験時に準備するもの</p>
+		<p>・運動できる服装（ジャージやハーフパンツ等）</p>
+		<p>・飲み物（汗をかきます。建物内に水道はあります）</p>
+		<p>・汗拭きタオル等</p>
+		<p>・着替え</p>
+		<br>
+		<p>連絡先：</p>
+		<p>電　話：090-8879-9407　［担当：金（キン）］</p>
+		<p>メール：<a href="mailto:songchol-816@docomo.ne.jp">songchol-816@docomo.ne.jp</a></p>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td><img src="./img/1day-2.jpg"></td>
+	      <td>
+		<h3>ステップ２　　訪問</h3>
+		<br>
+		<p>稽古時間（稽古スケジュール参照）を確認して、ご希望の稽古時間にお越しください。</p>
+		<p>また、稽古時間内であればいつでも大丈夫です。ご都合による途中退出等もできますので、お気軽にお越し下さい。</p>
+		<br>
+		<p>親御様に関しましても、お子様をご覧いただける環境となっております。</p>
+		<br>
+		<p>駐車場は、蕨市市民会館は無料でございます。</p>
+		<p>川口並木公民館は近くに有料（３０分１００円程度）がございます</p>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td><img src="./img/1day-3.jpg"></td>
+	      <td>
+		<h3>ステップ３　　体験 or 見学</h3>
+		<br>
+		<p>お越しいただきましたら、さっそく着替えて体験開始！（更衣室有）</p>
+		<br>
+		<p>最初は難しいことはしませんので、気軽な気持ちでご参加下さい</p>
+		<br>
+		<p>常に各個人のペースに合わせて稽古を行っていきます。</p>
+		<br>
+		<p>見学の場合は、椅子に座りながらご見学いただけます。</p>
+		<p>また、途中退出等もできますので、空いている時間を有効にご活用下さい。</p>
+		<p>お帰りの際、詳しい資料をお渡しいたします。</p>
+	      </td>
+	    </tr>
+	  </table>
+
+	  <br>
+
+      </div>
+      <div id="admission">
+		  <br>
+	  <h2>会員種別とクラス</h2>
+	  <br>
+	  <p>会員種別とクラスにより会費が異なります。まずは、該当する会員種別とクラスをご確認ください。</p>
+	  <br>
+	  <h3>会員種別</h3>
+	  <br>
+	  <table>
+	    <tr>
+	      <td id="key">一般会員</td>
+	      <td>通常は一般会員です。</td>
+	    </tr>
+	    <tr>
+	      <td id="key">家族会員</td>
+	      <td>家族に稽古生がおられる方です。二人目以降は家族会員となり、会費の割引があります。</td>
+	    </tr>
+	    <tr>
+	      <td id="key">準会員</td><td>他の道場に所属している方です。会費は半額になります。</td>
+	    </tr>
+	  </table>
+	  <br>
+	  <h3>クラス</h3>
+	  <br>
+	  <table>
+	    <tr>
+	      <td id="key">幼年・少年部</td>
+	      <td>4歳～小学６年生までの男女児童</td>
+	    </tr>
+	    <tr>
+	      <td id="key">成年女子部</td>
+	      <td>12歳以上女子</td>
+	    </tr>
+	    <tr>
+	      <td id="key">男子学生部</td>
+	      <td>中学、高校、専門、大学生男子</td>
+	    </tr>
+	    <tr>
+	      <td id="key">成年男子部</td>
+	      <td>18歳以上社会人男子</td>
+	    </tr>
+	  </table>
+	  <br>
+	  <br>
+	  <h2>会費一覧</h2>
+	  <br>
+	  <p>入会金と月謝の一覧表です。<font color="red">半年払い、一年払いではお得な割引があります！</font></p>
+	  <br>
+	  <table>
+	    <tr>
+	      <td colspan="2"></td>
+	      <td>幼年・少年部</td>
+	      <td>女子部</td>
+	      <td>学生部</td>
+	      <td>成年部</td>
+	    </tr>
+
+	    <tr>
+	      <td colspan="2">入会金</td>
+	      <td align="right"><font size="+1">￥6,000</font></td>
+	      <td align="right"><font size="+1">￥6,000</font></td>
+	      <td align="right"><font size="+1">￥6,000</font></td>
+	      <td align="right"><font size="+1">￥6,000</font></td>
+	    </tr>
+
+	    <tr>
+	      <td rowspan="3">一般会員</td>
+	      <td>１ヶ月払い</td>
+	      <td align="right"><font size="+1">￥5,000</font></td>
+	      <td align="right"><font size="+1">￥6,500</font></td>
+	      <td align="right"><font size="+1">￥6,500</font></td>
+	      <td align="right"><font size="+1">￥7,500</font></td>
+	    </tr>
+	    <tr>
+	      <td>割引！６ヶ月払い</td>
+	      <td align="right"><p>￥25,000</p><p>(5,000円割引)</p></td>
+	      <td align="right"><p>￥32,500</p><p>(6,500円割引)</p></td>
+	      <td align="right"><p>￥32,500</p><p>(6,500円割引)</p></td>
+	      <td align="right"><p>￥37,500</p><p>(7,500円割引)</p></td>
+	    </tr>
+	    <tr>
+	      <td>お得！１年払い</td>
+	      <td align="right"><p>￥50,000</p><p>(10,000円割引)</p></td>
+	      <td align="right"><p>￥65,000</p><p>(13,000円割引)</p></td>
+	      <td align="right"><p>￥65,000</p><p>(13,000円割引)</p></td>
+	      <td align="right"><p>￥75,000</p><p>(15,000円割引)</p></td>
+	    </tr>
+
+	    <tr>
+	      <td rowspan="3"><p>家族会員</p><p>(二人目)</p></td>
+	      <td>１ヶ月払い</td>
+	      <td align="right"><font size="+1">￥4,000</font></td>
+	      <td align="right"><font size="+1">￥5,500</font></td>
+	      <td align="right"><font size="+1">￥5,500</font></td>
+	      <td align="right"><font size="+1">￥6,500</font></td>
+	    </tr>
+	    <tr>
+	      <td>割引！６ヶ月払い</td>
+	      <td align="right"><p>￥20,000</p><p>(4,000円割引)</p></td>
+	      <td align="right"><p>￥27,500</p><p>(5,500円割引)</p></td>
+	      <td align="right"><p>￥27,500</p><p>(5,500円割引)</p></td>
+	      <td align="right"><p>￥32,500</p><p>(6,500円割引)</p></td>
+	    </tr>
+	    <tr>
+	      <td>お得！１年払い</td>
+	      <td align="right"><p>￥40,000</p><p>(8,000円割引)</p></td>
+	      <td align="right"><p>￥55,000</p><p>(11,000円割引)</p></td>
+	      <td align="right"><p>￥55,000</p><p>(11,000円割引)</p></td>
+	      <td align="right"><p>￥65,000</p><p>(13,000円割引)</p></td>
+	    </tr>
+
+	    <tr>
+	      <td rowspan="3"><p>家族会員</p><p>(三人目)</p></td>
+	      <td>１ヶ月払い</td>
+	      <td align="right"><font size="+1">￥3,000</font></td>
+	      <td align="right"><font size="+1">￥4,500</font></td>
+	      <td align="right"><font size="+1">￥4,500</font></td>
+	      <td align="right"><font size="+1">￥5,500</font></td>
+	    </tr>
+	    <tr>
+	      <td>割引！６ヶ月払い</td>
+	      <td align="right"><p>￥15,000</p><p>(3,000円割引)</p></td>
+	      <td align="right"><p>￥22,500</p><p>(4,500円割引)</p></td>
+	      <td align="right"><p>￥22,500</p><p>(4,500円割引)</p></td>
+	      <td align="right"><p>￥27,500</p><p>(5,500円割引)</p></td>
+	    </tr>
+	    <tr>
+	      <td>お得！１年払い</td>
+	      <td align="right"><p>￥30,000</p><p>(6,000円割引)</p></td>
+	      <td align="right"><p>￥45,000</p><p>(9,000円割引)</p></td>
+	      <td align="right"><p>￥45,000</p><p>(9,000円割引)</p></td>
+	      <td align="right"><p>￥55,000</p><p>(11,000円割引)</p></td>
+	    </tr>
+
+	  </table>
+	  <br>
+	  <p>※　上記会費で、川口クラブ、蕨クラブの両方で稽古ができます。</p>
+	  <br>
+	  <p>※　入会した月の15日をすぎての入会月会費は半額となります</p>
+	  <br>
+	  <br>
+
+
+	  <h2>入会時にかかる費用（概算）</h2><br>
+
+	  <p>入会時にかかる費用の一例です。入会時には、入会金、月謝一ヶ月分、道衣代、教材費(教本、ミット)が必要になります。</p>
+	  <p>道衣のサイズや月謝のまとめ払いなどで金額は変動しますので、詳細はお尋ねください。</p>
+	  
+	  <br>
+	  <h3>幼年・少年部</h3>
+	  <br>
+	  <p>4才より12才までの男女の場合</p>
+	  <br>
+	  <table id="fee">
+	    <tr>
+	      <td>入会金</td><td align="right">6,000円</td>
+	    </tr>
+	    <tr>
+	      <td>月会費(半年、１年払い割引あり)</td><td align="right">5,000円</td>
+	    </tr>
+	    <tr>
+	      <td>テコンドー道衣代</td><td align="right">9,500円</td>
+	    </tr>
+	    <tr>
+	      <td>教材費（教本、ミット）</td><td align="right">4,500円</td>
+	    </tr>
+	    <tr>
+	      <td>スポーツ保険</td><td align="right">2,000円</td>
+	    </tr>
+	    <tr>
+	      <td>合計金額</td><td align="right">27,000円</td>
+	    </tr>
+	  </table>
+	  <br>
+	  
+	  <h3>女子部・学生部</h3>
+	  <br>
+	  <p>中学生以上の女性、または、中学、高校、専門、大学生男性の場合</p>
+	  <br>
+	  <table id="fee">
+	    <tr>
+	      <td>入会金</td><td align="right">6,000円</td>
+	    </tr>
+	    <tr>
+	      <td>月会費(半年、１年払い割引あり)</td><td align="right">6,500円</td>
+	    </tr>
+	    <tr>
+	      <td>テコンドー道衣代</td><td align="right">10,500円</td>
+	    </tr>
+	    <tr>
+	      <td>教材費（教本、ミット）</td><td align="right">4,500円</td>
+	    </tr>
+	    <tr>
+	      <td>スポーツ保険</td><td align="right">2,000円</td>
+	    </tr>
+	    <tr>
+	      <td>合計金額</td><td align="right">29,500円</td>
+	    </tr>
+	  </table>
+	  <br>
+	  
+	  <h3>成年部</h3>
+	  <br>
+	  <p>18才以上の社会人男性の場合</p>
+	  <br>
+	  <table id="fee">
+	    <tr>
+	      <td>入会金</td><td align="right">6,000円</td>
+	    </tr>
+	    <tr>
+	      <td>月会費(半年、１年払い割引あり)</td><td align="right">7,500円</td>
+	    </tr>
+	    <tr>
+	      <td>テコンドー道衣代</td><td align="right">10,500円</td>
+	    </tr>
+	    <tr>
+	      <td>教材費（教本、ミット）</td><td align="right">4,500円</td>
+	    </tr>
+	    <tr>
+	      <td>スポーツ保険</td><td align="right">2,000円</td>
+	    </tr>
+	    <tr>
+	      <td>合計金額</td><td align="right">30,500円</td>
+	    </tr>
+	  </table>
+	  <br>
+      </div>
+      <div id="instructor">
+
+	  <br>
+	  <h2>金成哲道場の指導員紹介です</h2>
+	  <br>
+	  <img src="img/blacks.jpg" alt="金道場　指導員写真">
+	  <br><br>
+	  <h3>師範</h3>
+	  <br>
+	  <table>
+	    <tr>
+	      <!-- 指導員写真 -->
+	      <td align="center" valign="top">
+		<table>
+		  <tr><td><img src="img/songchol.jpg" ALT="金　成哲"></td></tr>
+		  <tr><td><img src="img/songchol2.jpg" ALT="金　成哲"></td></tr>
+		</table>
+	      </td>
+	      <!-- 説明詳細テーブル -->
+	      <td>
+		<table>
+		  <tr>
+		    <td id="key">氏名</td><td>金　成哲（キム　ソンチョル）</td>
+		  </tr>
+		  <tr>
+		    <td id="key">生年月日</td><td>1973年　3月　15日</td>
+		  </tr>
+		  <tr>
+		    <td id="key">身長</td><td>171cm</td>
+		  </tr>
+		  <tr>
+		    <td id="key">体重</td><td>68kg</td>
+		  </tr>
+		  <tr>
+		    <td id="key">テコンドー歴</td><td>20年</td>
+		  </tr>
+		  <tr>
+		    <td id="key">指導歴</td><td>16年（2011年4月現在）</td>
+		  </tr>
+		  <tr>
+		    <td id="key">国籍</td><td>韓国（在日3世日系韓国人として、0歳から日本で育つ。）</td>
+		  </tr>
+		  <tr>
+		    <td id="key">資格・段位</td>
+		    <td>
+		      国際テコンドー連盟認定・師範<br>
+		      テコンドー4段<br>
+		      国内A級審判
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">所属・役職</td>
+		    <td>埼玉県テコンドー連盟副理事長<br>
+		      川口市テコンドー協会理事長<br>
+		      わらび市テコンドー協会理事長<br>
+		      テコンドー金成哲道場代表
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">過去戦績</td>
+		    <td>
+		      <p>・ブラックベルトチャンピオンシップテコンドー選手権大会優勝</p>
+		      <p>・第14回全日本テコンドー選手権大会　ライト級準優勝</p>
+		      <p>・第11回世界テコンドー選手権大会出場　ベスト16入賞</p>
+		      <p>・その他多数入賞暦あり</p>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">その他</td>
+		    <td>
+		      <p>・2002年より川口市、わらび市の社会教育団体人材バンクに登録。</p>
+		      <p>・2005年より現在まで川口市内小学校１０校にて、国際文化交流授業・韓国教師として、テコンドー授業を実施する。</p>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">ご挨拶</td>
+		    <td>
+		      はじめまして、こんにちは！<br>
+		      <br>
+		      私は地元でもある川口市、蕨市でテコンドーを広めて生きたいと思い、11年前にこの道場を創めました。<br>
+		      日々指導の中で、テコンドーが生徒さんの心の平和、楽しみとなり健康維持をもたらしてくれる事を信念として、今まで取組んで参りました。<br>
+		      <br>
+
+		      今世の中は、とてもきびしい時代とも言われております。<br>
+		      事態要因は、文明の繁栄と共に失われてしまいつつある、人間の道徳、秩序が薄れてしまった社会経済状況、または自然環境にもあると思います。<br>
+		      このような時でも人間の幸せの原点は、心から楽しめる対象を見つけて、それを実行できる事だと思います。<br>
+		      もし、テコンドーをはじめたのであれば、たくさんの事を感じられると思います。<br>
+		      修練を通して礼儀、技術を備え人格、身体もより良く強く形成していけますし、何よりも精神的、肉体的な痛みがわかるようになります。<br>
+		      そして沢山の素晴らしい仲間達にも恵まれるでしょう。<br>
+		      好きになり集中して打ち込める趣味や特技を持つ事が出来れば、新しい自分に出会えると思えますし、その姿はとても清く美しいものになり、進化を遂げます。<br>
+		      人生の経験、苦労や喜び、テコンドーで学ぶ精神をわかれば、相手の立場をおのずと理解してやさしくなる本当の強さ、人間力が備わり苦難を克服する原動力として大いに役立つ筈です。<br>
+		      <br>
+
+		      今このようにテコンドーを指導させてもらえるのは、日頃お世話になっている会員様、保護者様をはじめ、私のテコンドー人生を支えてくださった方々のお力添えにより叶えられております。<br>
+		      皆様への感謝の気持ちを、いつまでも胸に刻み、これからもテコンドー人生を歩んで生きたいと思います。
+		      今後とも、宜しくお願い致します。<br>
+		      <br>
+		      金　成哲<br>
+
+		      
+		    </td>
+		  </tr>
+		</table>  <!-- 説明項目テーブル -->
+	      </td>
+	    </tr>
+	  </table>
+	  <br>
+
+
+
+
+	  <h3>道場広報担当</h3>
+	  <br>
+	  <table>
+	    <tr>
+	      <!-- 指導員写真 -->
+	      <td align="center" valign="top">
+		<table>
+		  <tr>
+		    <td>
+		      <img src="img/aoyagi.jpg" ALT="青柳　恭義">
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>
+		      写真はそのうち・・・
+		    </td>
+		  </tr>
+		</table>
+	      </td>
+	      <!-- 説明詳細テーブル -->
+	      <td>
+		<table>
+		  <tr>
+		    <td id="key">氏名</td><td>青柳　恭義　（アオヤギ　タカヨシ）</td>
+		  </tr>
+		  <tr>
+		    <td id="key">生年月日</td><td>1972年　1月　31日</td>
+		  </tr>
+		  <tr>	  
+		    <td id="key">身長</td><td>180cm</td>
+		  </tr>
+		  <tr>
+		    <td id="key">体重</td><td>74kg</td>
+		  </tr>
+		  <tr>
+		    <td id="key">テコンドー歴</td><td>10年</td>
+		  </tr>
+		  <tr>
+		    <td id="key">国籍</td><td>日本</td>
+		  </tr>
+		  <tr>
+		    <td id="key">資格・段位</td>
+		    <td>テコンドー2段<br>
+		      国内B級審判
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">所属・役職</td>
+		    <td>川口、蕨クラブ<br>
+		      金成哲道場広報担当
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">過去戦績</td>
+		    <td>
+		      <p>2005年-2010年　全日本大会　マッソギ個人戦　ベスト８</p>
+		      <p>2005年 全日本大会　団体マッソギ３位、団体トゥル準優勝</p>
+		      <p>2006年 全日本大会　団体マッソギ３位、団体トゥル３位</p>
+		      <p>その他、地方大会でマッソギ入賞多数（トゥルは・・・）</p>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">趣味</td>
+		    <td>楽器全般(主にピアノとギター）　ジャズ鑑賞　車いじり　日曜大工　読書　etc...</td>
+		  </tr>
+		  <tr>
+		    <td id="key">ひと言</td>
+		    <td>
+		      <p></p>
+		    </td>
+		  </tr>
+		</table>  <!-- 説明項目テーブル -->
+	      </td>
+	    </tr>
+	  </table>
+	  <br>
+
+	  <h3>指導員</h3>
+	  <br>
+	  <table>
+	    <tr>
+	      <!-- 指導員写真 -->
+	      <td align="center" valign="top">
+		<table>
+		  <tr>
+		    <td>
+		      <img src="img/hirai.jpg" ALT="平井　健之">
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>
+		      <img src="img/hirai-2.jpg" ALT="平井　健之">
+		    </td>
+		  </tr>
+		</table>
+	      </td>
+	      <!-- 説明詳細テーブル -->
+	      <td>
+		<table>
+		  <tr>
+		    <td id="key">氏名</td><td>平井　健之　（ヒライ　タケシ）</td>
+		  </tr>
+		  <tr>
+		    <td id="key">生年月日</td><td>1978年　10月　26日</td>
+		  </tr>
+		  <tr>	  
+		    <td id="key">身長</td><td>170cm</td>
+		  </tr>
+		  <tr>
+		    <td id="key">体重</td><td>74kg</td>
+		  </tr>
+		  <tr>
+		    <td id="key">テコンドー歴</td><td>8年</td>
+		  </tr>
+		  <tr>
+		    <td id="key">指導歴</td><td>4年（2011年5月現在）</td>
+		  </tr>
+		  <tr>
+		    <td id="key">国籍</td><td>日本</td>
+		  </tr>
+		  <tr>
+		    <td id="key">資格・段位</td>
+		    <td>指導員<br>
+		      テコンドー2段<br>
+		      国内B級審判
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">所属・役職</td>
+		    <td>川口、蕨クラブ<br>
+		      金成哲道場副責任者
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">過去戦績</td>
+		    <td>
+		      <p>・2007年　第２回中国北京国際大会　　 １段　トゥル第３位</p>												<p>・2009年　第11回近畿テコンドー大会　１段　トゥル優勝、マッソギヘビー級　第３位</p>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">趣味</td>
+		    <td>サーフィン、釣り、アウトドア全般、読書　etc</td>
+		  </tr>
+		  <tr>
+		    <td id="key">ひと言</td>
+		    <td>
+		      <p>　こんにちは！　私がテコンドーを始めたのは社会人になってからです。「大人になってから、部活を始めてみるのも悪くないかなぁ」と安易な気持ちで始めました。社会人になり、会社と家の往復で平日を終わらせていた自分が、まさか!?テコンドーをやることになるとは…(^^ゞ。</p>
+		      <p>　しかし、初めての体験に行って感じたことは、「自分には、まだまだできることがある。成長のチャンスは常に目の前にある。」でした。そこには、志の高い先輩方が常に修練に励んでいる姿がありました。</p>
+		      <br>
+		      <p>「何か習い事でもしてみたいなぁ」と思っている方は意外に多いのではないでしょうか？でも、その中で実際に行動に移る人はどのくらいいるのでしょうか？「まだ何かできる」と思っている皆様の成長のお手伝いをさせて下さい。</p>
+		      <br>
+		      <p>私も、指導員になってまだ間もない立場であり、「指導とは学ぶこと」と感じております。ぜひ一度、体験練習にお越し下さい。道場でお会いしましょう☆（＾＾）
+		      </p>
+		    </td>
+		  </tr>
+		</table>  <!-- 説明項目テーブル -->
+	      </td>
+	    </tr>
+	  </table>
+	  <br>
+	  
+	  
+	  
+	  <h3>指導補助</h3>
+	  <br>
+	  <table>
+	    <tr>
+	      <!-- 指導員写真 -->
+	      <td align="center" valign="top">
+		<table>
+		  <tr><td><img src="img/kikukawa.jpg" ALT="菊川　晴来"></td></tr>
+		  <tr><td><img src="img/kikukawa2.jpg" ALT="菊川　晴来"></td></tr>
+		</table>
+	      </td>
+	      <!-- 説明詳細テーブル -->
+	      <td>
+		<table>
+		  <tr>
+		    <td id="key">氏名</td><td>菊川　晴来　（キクカワ　ハルキ）</td>
+		  </tr>
+		  <tr>
+		    <td id="key">生年月日</td><td>1985年　11月　3日</td>
+		  </tr>
+		  <tr>	  
+		    <td id="key">身長</td><td>168cm</td>
+		  </tr>
+		  <tr>
+		    <td id="key">体重</td><td>68kg</td>
+		  </tr>
+		  <tr>
+		    <td id="key">テコンドー歴</td><td>７年半<br>指導歴４年</td>
+		  </tr>
+		  <tr>
+		    <td id="key">国籍</td><td>日本</td>
+		  </tr>
+		  <tr>
+		    <td id="key">資格・級位</td>
+		    <td>指導補助員<br>
+		      テコンドー１段
+		    </td>
+		  </tr>
+
+		  <tr>
+		    <td id="key">所属・役職</td>
+		    <td>川口、蕨クラブ<br>
+		      道場自主トレ責任者、少年部副責任者
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">趣味・特技</td>
+		    <td>
+		      長距離自転車、少年部の子供と遊ぶ事、登山、歴史研究、サッカーリフティング
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">ひと言</td>
+		    <td>
+		      <p>皆様こんにちは。</p>
+		      <p>　僕は以前空手を５年習っておりましたが、テコンドーの華麗な蹴り技に大きな関心を持ち、習いたい一心で道場の門をたたきました。稽古をスタートしてからは、何が何でもテコンドーの技が上手くなりたいと日々夢中でした。現在に至っても心技を磨き、もっと高く飛んで回転して蹴る＜チャギ＞（蹴り）を身に付けたいと思っています。</p>
+		      <p>　また韓国の歴史や言葉、在日の韓国人の方々をはじめ素敵な仲間たちに出会う事ができました。</p>
+		      <p>　かなりの口下手ですが、皆さんに対し熱い思いを込めてふれあい、心技を懸命に一緒に学びたいです。今後とも宜しくお願い致します。											</p>
+		    </td>
+		  </tr>
+		</table>  <!-- 説明項目テーブル -->
+	      </td>
+	    </tr>
+
+	    <tr>
+	      <!-- 指導員写真 -->
+	      <td align="center" valign="top">
+		<img src="img/funada.jpg" ALT="船田　">
+	      </td>
+	      <!-- 説明詳細テーブル -->
+	      <td>
+		<table>
+		  <tr>
+		    <td id="key">氏名</td><td></td>
+		  </tr>
+		  <tr>
+		    <td id="key">生年月日</td><td></td>
+		  </tr>
+		  <tr>	  
+		    <td id="key">身長</td><td></td>
+		  </tr>
+		  <tr>
+		    <td id="key">体重</td><td></td>
+		  </tr>
+		  <tr>
+		    <td id="key">テコンドー歴</td>
+		    <td></td>
+		  </tr>
+		  <tr>
+		    <td id="key">国籍</td><td>日本</td>
+		  </tr>
+		  <tr>
+		    <td id="key">資格・級位</td>
+		    <td>指導補助員<br>
+		      テコンドー１段
+		    </td>
+		  </tr>
+
+		  <tr>
+		    <td id="key">所属・役職</td>
+		    <td>川口、蕨クラブ
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">趣味・特技</td>
+		    <td>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td id="key">ひと言</td>
+		    <td>
+		    </td>
+		  </tr>
+		</table>  <!-- 説明項目テーブル -->
+	      </td>
+	    </tr>
+	  </table>
+      </div>
+
+      <div id="schedule">
+	  <br>
+	  <h2>練習スケジュールです</h2><br>
+
+	  <iframe src="https://www.google.com/calendar/embed?src=tkdksc%40gmail.com&ctz=Asia/Tokyo"
+		  style="border: 0" width="800" height="600" frameborder="0" scrolling="no">
+	  </iframe>
+      </div>
+
+      <div id="access">
+	  <br>
+	  <h2>練習会場へのアクセス</h2>
+	  <br>
+
+	  <table>
+	    <tr>
+	      <td id="key"><h4>蕨クラブ</h4></td>
+	      <td><img src="./img/warabi-map.jpg"></td>
+	      <td>
+		<p>会場：蕨市民会館内・勤労青少年ホーム　ユースパル2階　体育室</p>
+		<p>住所：埼玉県蕨市中央4-21-29</p>
+		<p>最寄：ＪＲ京浜東北線「蕨駅」西口より徒歩　8分</p>
+		<p>電話：048-445-7660</p>
+		<p>備考：室内に男女更衣室完備、駐車場完備</p>
+		<br>
+		<p>練習日：毎週月曜日</p>
+		<p>　　17：00～開場</p>
+		<p>　　①幼年部：17：15～17：55まで</p>
+		<p>　　②少年部：18：05～19：00まで</p>
+		<p>　　③成年・女子部：19：30～21：20まで</p>
+		<br>
+		<p><img src="./img/warabi-bld.jpg"></p>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td id="key"><h4>川口クラブ</h4></td>
+	      <td><img src="./img/namiki.jpg"></td>
+	      <td>
+		<p>会場：川口市立並木公民館　３階・視聴覚室</p>
+		<p>住所：埼玉県川口市並木２－８－２</p>
+		<p>最寄：ＪＲ京浜東北線「西川口駅」東口より徒歩４分</p>
+		<p>電話：048-251-2288</p>
+		<p>備考：男子・女子更衣室2階に完備、無料駐車場7台まであり</p>
+		<br>
+		<p>練習日：毎週水曜日</p>
+		<p>　　17：00～開場</p>
+		<p>　　①幼年部：17：15～17：55まで</p>
+		<p>　　②少年部：18：00～18：40まで</p>
+		<p>　　③成年・女子部：19：00～20：45まで</p>
+		<br>
+		<p><img src="./img/kawaguchi-bld.jpg"></p>
+	      </td>
+	    </tr>
+	  </table>
+      </div>
+
+      <div id="link">
+	  <br>
+	  <h2>道場</h2>
+	  <h3>日本国際テコンドー協会 傘下道場へのリンクです</h3>
+	  <br>
+	  <table>
+	    <tr>
+	      <td id="link">日本国際テコンドー協会</td>
+	      <td><a href="http://www.taekwon-do.co.jp/">http://www.taekwon-do.co.jp/</a></td>
+	    </tr>
+	    <tr>
+	      <td id="link">朴道場</td>
+	      <td><a href="http://www.taekwon-do-pakdojo.com">http://www.taekwon-do-pakdojo.com/</a></td>
+	    </tr>
+	    <tr>
+	      <td id="link">黄道場</td>
+	      <td><a href="http://tkd-hwangdojo.jp/">http://tkd-hwangdojo.jp/</a></td>
+	    </tr>
+	    <tr>
+	      <td id="link">高知道場</td>
+	      <td><a href="http://www.kig-laboratory.com/">http://www.kig-laboratory.com/</a></td>
+	    </tr>
+	    <tr>
+	      <td id="link">町屋道場</td>
+	      <td><a href="http://famiteko.k-server.org/">http://famiteko.k-server.org/</a></td>
+	    </tr>
+	    <tr>
+	      <td id="link">渋谷道場</td>
+	      <td><a href="http://www.tkd-hs.jp/sasazuka/">http://www.tkd-hs.jp/sasazuka/</a></td>
+	    </tr>
+	    <tr>
+	      <td id="link">府中道場</td>
+	      <td><a href="http://www.fuchudojo.sakura.ne.jp/">http://www.fuchudojo.sakura.ne.jp/</a></td>
+	    </tr>
+	    <tr>
+	      <td id="link">函館道場</td>
+	      <td><a href="http://itfhakodate.web.fc2.com/">http://itfhakodate.web.fc2.com/</a></td>
+	    </tr>
+	    <tr>
+	      <td id="link">札幌道場</td>
+	      <td><a href="http://www5f.biglobe.ne.jp/~itf-sapporoclub/">http://www5f.biglobe.ne.jp/~itf-sapporoclub/</a></td>
+	    </tr>
+	    <tr>
+	      <td id="link">千葉道場</td>
+	      <td><a href="http://www.seodojang.com/">http://www.seodojang.com/</a></td>
+	    </tr>
+	    <tr>
+	      <td id="link">京都道場</td>
+	      <td><a href="http://www.itf-chodojo.jp/">http://www.itf-chodojo.jp/</a></td>
+	    </tr>
+	    <tr>
+	      <td id="link">宮崎道場</td>
+	      <td><a href="http://www.miyazaki-catv.ne.jp/~itf-hiro/">http://www.miyazaki-catv.ne.jp/~itf-hiro/</a></td>
+	    </tr>
+	    <tr>
+	      <td id="link">オムスクール</td>
+	      <td><a href="http://www.omschool.jp/">http://www.omschool.jp/</a></td>
+	    </tr>
+	  </table>
+	  <br>
+	  <br>
+	  <h2>ブログ</h2>
+	  <h3>テコンドー関係のブログです</h3>
+	  <br>
+	  <table>
+	    <tr>
+	      <td id="link">金成哲道場のブログ</td>
+	      <td><a href="http://ameblo.jp/tkdksc/">http://ameblo.jp/tkdksc/</a></td>
+	    </tr>
+	  </table>
+	  <br>
+	  <br>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <p>■金成哲テコンドー道場　TEL：090-8879-9407　e-mail：<a href="mailto:tkdksc@gmail.com">tkdksc@gmail.com</a></p>
+      <p>■当サイトに関するあらゆる著作物・知的財産は全て【 金成哲テコンドー道場 】に帰属します。</p>
+    </div>
+    
+  </body>
+</html>
