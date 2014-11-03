@@ -1,0 +1,163 @@
+#header {
+  color: #ffffff;
+  width: 902px;
+  padding: 10px;
+  height: 157px;
+  margin: 10px 0px 0px 0px;
+  background: #000000;
+  background-image: url("./img/moai.jpg");
+  background-position: right top;
+  background-repeat: no-repeat;
+  line-height: 120%;
+}
+
+#tabs {
+  width: 915px;
+}
+
+h2 {
+  height:24px;margin:0px 0px 5px 0px;padding:8px 0px 0px 15px;
+  font-size:16px;font-weight:bold;color:#444444;
+  background-image:url(./img/head016_05.png);
+}
+
+h3 {
+  height:24px;margin:0px 0px 5px 0px;padding:8px 0px 0px 15px;
+  font-size:14px;font-weight:bold;color:#444444;
+  background-image:url(./img/head017_05.png);
+  background-repeat: no-repeat;
+}
+
+#footer { 
+  width: 902px;
+  height: 40px;
+  clear: both;
+  font-size:10px;
+  color: #ffffff;
+  margin: 10px;
+  background: #000000;
+  margin: 0px 0px 10px 0px;
+  padding: 10px;
+  line-height: 100%;
+}
+
+.clear { clear: both; background: none; }
+
+table#fee {
+  width: 400px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-top: 1px solid #444444;
+  border-left: 1px solid #444444;
+  background: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-top: 1px solid #444444;
+  border-left: 1px solid #444444;
+  background: #fff;
+}
+
+td#key {
+  width: 80px;
+  padding: 5px;
+  border-right: 1px solid #444444;
+  border-bottom: 1px solid #444444;
+  background: #87CEFA;
+  color: #000000;
+  font-size: 12px;
+  font-weight: normald;
+  text-align: center;
+}
+
+td#link {
+  width: 150px;
+  padding: 5px;
+  border-right: 1px solid #444444;
+  border-bottom: 1px solid #444444;
+  background: #87CEFA;
+  color: #000000;
+  font-size: 12px;
+  font-weight: normald;
+  text-align: left
+}
+
+td {
+  padding: 5px;
+  border-right: 1px solid #444444;
+  border-bottom: 1px solid #444444;
+  font-size: 12px;
+}
+
+/* begin styles for RSS Feed */
+.rss_box {
+  margin: 3px 2%;
+  padding: 0px;
+  width: 460px;
+  background-color: #fff;
+}
+
+.rss_title, rss_title a {
+  font-size: 12px;
+  font-weight:bold;
+  margin: 5px 0;
+  padding: 0;
+  letter-spacing: 1px;
+}
+
+.rss_items {
+  margin: 3px;
+  padding: 0px;
+}
+
+.rss_item  {
+  padding-right: 0px;
+  padding-left: 0px;
+  font-weight : normal; 
+  font-size: 8px;
+  padding-bottom: 2px;
+  color: #999;
+  word-break: break-all;
+}
+
+.rss_item a:link, .rss_item a:visited, .rss_item a:active {
+  font-weight: bold;
+  font-size: 14px;
+  color: #666;
+  text-decoration : none;
+}
+
+.rss_item a:hover { 
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration : underline;
+  color: #333;
+}
+
+.rss_date {
+  font-size: 10px;
+  font-weight : normal;
+  color: #999;
+}
+
+body{ font: 77.5% "Trebuchet MS", sans-serif; margin: 50px;}
+
+.demoHeaders { margin-top: 2em; }
+  #dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+  #dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+  ul#icons {margin: 0; padding: 0;}
+  ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+  ul#icons span.ui-icon {float: left; margin: 0 4px;}
+  ul#tabchange {
+  width: 906px;
+}
+
+.campaign {
+}
+
+div.movie {
+    float: left;
+}
