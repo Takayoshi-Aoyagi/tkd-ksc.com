@@ -66,6 +66,7 @@ GoogleCalendar.prototype.makeEventListRequest = function () {
     var start = new Date(),
         end = new Date(),
         req;
+    start.setHours(start.getHours() - 12)
     end.setDate(end.getDate() + 14);
     req = gapi.client.calendar.events.list({
         "calendarId": "tkdksc@gmail.com",

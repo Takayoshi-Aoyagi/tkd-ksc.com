@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css"/>
     <link rel="stylesheet" href="../css/mobile.css"/>
   </head>
-  <body>
+  <body class="body">
     <!-- header -->
     <div data-role="header" data-position="fixed">
       <h1>金成哲テコンドー道場</h1>
@@ -23,10 +23,12 @@
       <div data-role="collapsible" class="content" data-collapsed="false">
 	<h1>お知らせ</h1>
 	<h3>新着情報</h3>
-	<font color="red">
-	  <p>祝！道場開設15周年<br>アニバーサリーキャンペーン実施中</p>
-	  <p>最大 25,500 円がお得に(先着５名様)<br>お早めにどうぞ！</p>
-	</font>
+	<div class="new_info">
+	  <p>祝！道場開設15周年</p>
+	  <p>アニバーサリーキャンペーン実施中</p>
+	  <p>最大 25,500 円がお得に</p>
+	  <p>お早めにどうぞ！</p>
+	</div>
 	<h3>稽古予定</h3>
 	<div id="sched_view"></div>
       </div>
@@ -50,11 +52,11 @@
 	  <div data-role="collapsible">
 	    <h2>練習風景</h2>
 	    <p>道場での練習の模様です。</p>
-	    <p>少年部</p>
+	    <h3>少年部</h3>
 	    <div class="video-container">
 	      <iframe src="//www.youtube.com/embed/OjT0HSRJ1s0" frameborder="0" allowfullscreen></iframe>
 	    </div>
-	    <p>成年部</p>
+	    <h3>成年部</h3>
 	    <div class="video-container">
 	      <iframe src="//www.youtube.com/embed/HfCz_BymfG8" frameborder="0" allowfullscreen></iframe>
 	    </div>

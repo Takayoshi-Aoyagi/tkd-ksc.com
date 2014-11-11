@@ -45,6 +45,8 @@ var app = app || {};
 
     app.ScheduleView = Backbone.View.extend({
 
+	className: 'event',
+	
 	initialize: function (data) {
 	    this.data = data;
 	},
@@ -55,7 +57,7 @@ var app = app || {};
 		loc = this.data.loc,
 		classes = this.data['classes'],
 		title,
-		html = '';
+		html = [];
 	    title = (function () {
 		var city,
 		    arr = loc.split('市');
@@ -66,18 +68,18 @@ var app = app || {};
 		    return sprintf("%s %s", date, loc);
 		}
 	    })();
-	    html += title;
-	    html += '<ul>';
+	    html.push(title);
 	    Object.keys(classes).sort().forEach(function (startTime) {
 		var element = classes[startTime],
 		    clazz,
 		    li;
 		clazz = element.summary.replace(/川口|蕨|わらび/, "");
-		li = sprintf("<li>%s: %s</li>", element.start, clazz);
-		html += li;
+		html.push(sprintf("・%s: %s", element.start, clazz));
 	    });
-	    html += '</ul>';
-	    this.$el.html(html);
+	    html = html.map(function (a) {
+		return '<p>' + a + '</p>';
+	    });
+	    this.$el.html(html.join(""));
 	}
     });
     
@@ -125,4 +127,3 @@ var app = app || {};
 	});
     };
 })();
-
