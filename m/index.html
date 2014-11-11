@@ -22,10 +22,13 @@
       <!-- 道場紹介 -->
       <div data-role="collapsible" class="content" data-collapsed="false">
 	<h1>お知らせ</h1>
+	<h3>新着情報</h3>
 	<font color="red">
 	  <p>祝！道場開設15周年<br>アニバーサリーキャンペーン実施中</p>
 	  <p>最大 25,500 円がお得に(先着５名様)<br>お早めにどうぞ！</p>
 	</font>
+	<h3>稽古予定</h3>
+	<div id="sched_view"></div>
       </div>
       <!-- 道場紹介 -->
       <div data-role="collapsible" class="content">
@@ -158,13 +161,6 @@
 	</ul>
       </div>
 
-      <!-- スケジュール -->
-      <div data-role="collapsible">
-	<h1>スケジュール</h1>
-	<p>直近の予定です。</p>
-	<div id='sched_view'></div>
-      </div>
-
       <!-- 指導員紹介 -->
       <div data-role="collapsible">
 	<h1>指導員紹介</h1>
@@ -192,6 +188,7 @@
     <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
     <script src="../js/async.js"></script>
     <script src="../js/moment.min.js"></script>
+    <script src="../js/sprintf.min.js"></script>
     <script src="../js/gc.js"></script>
     <script src="./mobile.js"></script>
     <script>
