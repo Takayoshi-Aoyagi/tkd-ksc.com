@@ -102,6 +102,10 @@ var app = app || {};
 		that.$el.append(sched.$el);
 	    });
 	    return this;
+	},
+
+	clear: function () {
+	    this.$el.empty();
 	}
     });
     
@@ -110,6 +114,7 @@ var app = app || {};
 	app.scheduleListView = new app.ScheduleListView();
 	app.schedules.on({
 	    reset: function () {
+		app.scheduleListView.clear();
 		app.scheduleListView.render();
 	    }
 	});
