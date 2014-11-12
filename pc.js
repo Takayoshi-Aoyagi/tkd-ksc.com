@@ -40,27 +40,41 @@ var app = app || {};
 		    { "title": "女子部" },
 		    { "title": "学生部" },
 		    { "title": "成年部" }
+		],
+		"columnDefs": [
+		    {
+			"width": "20%",
+			"targets": 0
+		    }
 		]
 	    };
 	    this.el = options.el;
 	    this.$el.DataTable(config);
 	}
     });
+
+    app.FeeView = Backbone.View.extend({
+
+	el: '#fee_tabs',
+
+	initialize: function () {
+	    var fee1 = new app.FeeTableView({
+		el: "#fee1",
+		dataset: app.FEE["month"]
+	    });
+	    var fee2 = new app.FeeTableView({
+		el: "#fee2",
+		dataset: app.FEE["half"]
+	    });
+	    var fee3 = new app.FeeTableView({
+		el: "#fee3",
+		dataset: app.FEE["year"]
+	    });
+	    $("#fee_tabs").tabs();
+	}
+    });
     
     app.init = function () {
-	var fee1 = new app.FeeTableView({
-	    el: "#fee1",
-	    dataset: app.FEE["month"]
-	});
-	var fee1 = new app.FeeTableView({
-	    el: "#fee2",
-	    dataset: app.FEE["half"]
-	});
-	var fee1 = new app.FeeTableView({
-	    el: "#fee3",
-	    dataset: app.FEE["year"]
-	});
-
-	$("#fee_tabs").tabs();
+	new app.FeeView();
     };
 })();

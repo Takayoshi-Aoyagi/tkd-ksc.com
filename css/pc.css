@@ -52,6 +52,7 @@ table#fee {
   background: #fff;
 }
 
+/*
 table {
   width: 100%;
   border-collapse: collapse;
@@ -60,6 +61,7 @@ table {
   border-left: 1px solid #444444;
   background: #fff;
 }
+*/
 
 td#key {
   width: 80px;
