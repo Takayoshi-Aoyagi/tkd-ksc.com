@@ -875,58 +875,9 @@
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="./pc.js"></script>
     <script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-25444755-1']);
-      _gaq.push(['_trackPageview']);
-
       $(function() {
-
         app.init();
-
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-
-        // Tabs
-        $('#tabs').tabs();
-
-        // google maps
-        gmap('埼玉県蕨市中央4-21', "warabi_map");
-        gmap('埼玉県川口市並木２－８－２', "kawaguchi_map");
       });
-
-      function gmap (addr, id) {
-        var geocoder = new google.maps.Geocoder();
-        geocoder.geocode({
-          'address': addr,
-          'region': 'jp'
-        },
-        function (results, status) {
-          if (status === google.maps.GeocoderStatus.OK) {
-            console.log(status);
-            for (var r in results) {
-              if (results[r].geometry) {
-                var latlng = results[r].geometry.location;
-                var bounds = new google.maps.LatLngBounds();
-                var opts = {
-                  zoom: 15,
-                  center: latlng,
-                  mapTypeId: google.maps.MapTypeId.ROADMAP,
-                  mapTypeControl: false
-                };
-                bounds.extend(latlng);
-                map = new google.maps.Map(document.getElementById(id), opts);
-                var marker = new google.maps.Marker({
-                  position: latlng,
-                  map: map
-                });
-              }
-            }
-          } else {
-            console.log(status);
-          }
-        });
-      }
     </script>
   </body>
 </html>
