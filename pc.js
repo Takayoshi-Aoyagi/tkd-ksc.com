@@ -2,29 +2,7 @@ var app = app || {};
 
 (function () {
 
-    app.FEE = {
-	"month": [
-	    ["入会金", "￥6,000", "￥6,000"," ￥6,000", "￥6,000"],
-	    ["一般会員", "￥5,000", "￥6,500", "￥6,500", "￥7,500"],
-	    ["家族会員(二人目)", "￥4,000", "￥5,500", "￥5,500", "￥6,500"],
-	    ["家族会員(三人目)", "￥3,000", "￥4,500", "￥4,500", "￥5,500"],
-	    ["サークル会員", "￥5,000", "￥6,000", "￥6,000", "￥7,000"]
-	],
-	"half": [
-	    ["入会金", "￥6,000", "￥6,000"," ￥6,000", "￥6,000"],
-	    ["一般会員", "￥25,000", "￥32,500", "￥32,500", "￥37,500"],
-	    ["家族会員(二人目)", "￥20,000", "￥27,500", "￥27,500", "￥32,500"],
-	    ["家族会員(三人目)", "￥15,000", "￥22,500", "￥22,500", "￥27,500"],
-	    ["サークル会員", "-", "-", "-", "-"]
-	],
-	"year": [
-	    ["入会金", "￥6,000", "￥6,000"," ￥6,000", "￥6,000"],
-	    ["一般会員", "￥50,000", "￥65,000", "￥65,000", "￥75,000"],
-	    ["家族会員(二人目)", "￥40,000", "￥55,000", "￥55,000", "￥65,000"],
-	    ["家族会員(三人目)", "￥30,000", "￥45,000", "￥45,000", "￥55,000"],
-	    ["サークル会員", "-", "-", "-", "-"]
-	],
-    };
+    "use strict";
     
     app.FeeTableView = Backbone.View.extend({
 	initialize: function (options) {
@@ -34,18 +12,12 @@ var app = app || {};
 		ordering: false,
 		info: false,
 		searching: false,
-		columns: [
-		    { "title": " " },
-		    { "title": "幼年・少年部" },
-		    { "title": "女子部" },
-		    { "title": "学生部" },
-		    { "title": "成年部" }
-		],
-		"columnDefs": [
-		    {
-			"width": "20%",
-			"targets": 0
-		    }
+		aoColumns: [
+		    { "sTitle": "", "width": "120%" },
+		    { "sTitle": "幼年・少年部", "width": "120%", "sClass": "right"},
+		    { "sTitle": "女子部","width": "120%", "sClass": "right"},
+		    { "sTitle": "学生部","width": "120%", "sClass": "right"},
+		    { "sTitle": "成年部","width": "120%", "sClass": "right"}
 		]
 	    };
 	    this.el = options.el;
@@ -60,15 +32,15 @@ var app = app || {};
 	initialize: function () {
 	    var fee1 = new app.FeeTableView({
 		el: "#fee1",
-		dataset: app.FEE["month"]
+		dataset: app.conf.FEE["month"]
 	    });
 	    var fee2 = new app.FeeTableView({
 		el: "#fee2",
-		dataset: app.FEE["half"]
+		dataset: app.conf.FEE["half"]
 	    });
 	    var fee3 = new app.FeeTableView({
 		el: "#fee3",
-		dataset: app.FEE["year"]
+		dataset: app.conf.FEE["year"]
 	    });
 	    $("#fee_tabs").tabs();
 	}
@@ -112,7 +84,7 @@ var app = app || {};
 			    mapTypeControl: false
 			};
 			bounds.extend(latlng);
-			map = new google.maps.Map(document.getElementById(that.el), opts);
+			var map = new google.maps.Map(document.getElementById(that.el), opts);
 			var marker = new google.maps.Marker({
 			    position: latlng,
 			    map: map
