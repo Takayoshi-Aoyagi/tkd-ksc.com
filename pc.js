@@ -3,8 +3,29 @@ var app = app || {};
 (function () {
 
     "use strict";
+
+    app.LinksTableView = Backbone.View.extend({
+
+	el: "#links",
+	
+	initialize: function () {
+	    var config = {
+		data: app.conf.LINKS,
+		paging: false,
+		ordering: false,
+		info: false,
+		searching: false
+	    };
+	    //this.$el.DataTable(config);
+	    $('#links_table').DataTable(config);
+	},
+
+	render: function () {
+	}
+    });
     
     app.FeeTableView = Backbone.View.extend({
+
 	initialize: function (options) {
 	    var config = {
 		data: options.dataset,
@@ -124,5 +145,8 @@ var app = app || {};
 
 	// Free Tabs
 	new app.FeeView();
+
+	// Links
+	new app.LinksTableView();
     };
 })();

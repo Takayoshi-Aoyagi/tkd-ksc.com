@@ -75,6 +75,7 @@ td#key {
   text-align: center;
 }
 
+/**
 td#link {
   width: 150px;
   padding: 5px;
@@ -86,6 +87,7 @@ td#link {
   font-weight: normald;
   text-align: left
 }
+**/
 
 td {
   padding: 5px;
