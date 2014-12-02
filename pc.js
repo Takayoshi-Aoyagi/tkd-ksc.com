@@ -14,9 +14,12 @@ var app = app || {};
 		paging: false,
 		ordering: false,
 		info: false,
-		searching: false
+		searching: false,
+		aoColumns: [
+		    { "sTitle": "道場" },
+		    { "sTitle": "URL" }
+		]
 	    };
-	    //this.$el.DataTable(config);
 	    $('#links_table').DataTable(config);
 	},
 
