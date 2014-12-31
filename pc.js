@@ -122,8 +122,6 @@ var app = app || {};
     });
     
     app.init = function () {
-
-	
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-25444755-1']);
 	_gaq.push(['_trackPageview']);

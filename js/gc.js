@@ -14,9 +14,9 @@ GoogleCalendar.prototype.getEvents = function (callback) {
         map = {};
     async.waterfall([
         function (cb) {
-            that.initialize(function () {
+            that.initialize(function (err) {
                 console.dir("loaded");
-                cb();
+                cb(err);
             });
         },
         function (cb) {
@@ -56,6 +56,10 @@ GoogleCalendar.prototype.getEvents = function (callback) {
 }
 
 GoogleCalendar.prototype.initialize = function (callback) {
+    if (!gapi || !gapi.cliet) {
+	callback("initialize failed");
+	return;
+    }
     gapi.client.setApiKey("AIzaSyBcfNIHy3lcSSBD385jDJaYfOalt-lLmRg");
     gapi.client.load('calendar', 'v3').then(function () {
         callback();

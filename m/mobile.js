@@ -1,19 +1,19 @@
 var app = app || {};
 
 (function () {
-
+    
     "use strict";
-
+    
     // Model
-
+    
     app.Schedule = Backbone.Model.extend({
     });
     
     // Collection
     app.ScheduleCollection = Backbone.Collection.extend({
-
+	
 	model: app.Schedule,
-
+	
 	summarize: function () {
 	    var data = {};
 	    this.forEach(function (schedule) {
@@ -42,7 +42,7 @@ var app = app || {};
     });
     
     // Views
-
+    
     app.ScheduleView = Backbone.View.extend({
 
 	className: 'event',
@@ -50,17 +50,17 @@ var app = app || {};
 	initialize: function (data) {
 	    this.data = data;
 	},
-
+	
 	render: function () {
 	    var that = this,
-		date = this.data.date,
-		loc = this.data.loc,
-		classes = this.data['classes'],
-		title,
-		html = [];
+	    date = this.data.date,
+	    loc = this.data.loc,
+	    classes = this.data['classes'],
+	    title,
+	    html = [];
 	    title = (function () {
 		var city,
-		    arr = loc.split('市');
+		arr = loc.split('市');
 		if (arr.length == 2) {
 		    city = arr[0];
 		    return sprintf("%s %sクラブ", date, city);
@@ -71,8 +71,8 @@ var app = app || {};
 	    html.push(title);
 	    Object.keys(classes).sort().forEach(function (startTime) {
 		var element = classes[startTime],
-		    clazz,
-		    li;
+		clazz,
+		li;
 		clazz = element.summary.replace(/川口|蕨|わらび/, "");
 		html.push(sprintf("・%s: %s", element.start, clazz));
 	    });
@@ -84,15 +84,15 @@ var app = app || {};
     });
     
     app.ScheduleListView = Backbone.View.extend({
-
+	
 	el: '#sched_view',
-
+	
 	initialize: function () {
 	},
 
 	render: function () {
 	    var html,
-		that = this;
+	    that = this;
 	    var summary = app.schedules.summarize();
 	    Object.keys(summary).sort().forEach(function (date) {
 		var data = summary[date],
@@ -108,23 +108,50 @@ var app = app || {};
 	    this.$el.empty();
 	}
     });
+
+    app.FeeView = Backbone.View.extend({
+	
+	el: '#fee_view',
+	
+	initialize: function () {
+	    this.render();
+	},
+	
+	render: function () {
+	    var config = {
+		data: app.conf.FEE.month,
+		paging: false,
+		ordering: false,
+		info: false,
+		searching: false,
+		aoColumns: [
+		    { "sTitle": "道場" },
+		    { "sTitle": "道場" },
+		    { "sTitle": "道場" },
+		    { "sTitle": "URL" }
+		]
+	    };
+	    $('#fee_table').DataTable(config);
+	}
+    });
     
     app.init = function () {
 	app.schedules = new app.ScheduleCollection();
 	app.scheduleListView = new app.ScheduleListView();
+	app.feeView = new app.FeeView();
 	app.schedules.on({
 	    reset: function () {
 		app.scheduleListView.clear();
 		app.scheduleListView.render();
 	    }
 	});
-    };
-    
-    // export
-    window.onload = function () {
+	
 	var gc = new GoogleCalendar(),
-	    array = [];
+	array = [];
 	gc.getEvents(function (err, events) {
+	    if (err || !events) {
+		return;
+	    }
 	    events.forEach(function (event) {
 		array.push(new app.Schedule(event));
 	    });
