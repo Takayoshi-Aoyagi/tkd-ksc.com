@@ -140,8 +140,7 @@
       <!-- 月謝・諸経費 -->
       <div data-role="collapsible">
 	<h1>月謝・諸経費</h1>
-	<p>スマホ版現在作成中！</p>
-	<p>ひとまず、<a target="_blank" href="http://tkd-ksc.com/?mode=pc#admission" >PC版</a>をご覧ください。</p>
+	<table id="fee_table"></table>
       </div>
 
       <!-- アクセス -->
@@ -191,10 +190,12 @@
     <script src="../js/underscore-min.js"></script>
     <script src="../js/backbone-min.js"></script>
     <script src="../js/jquery.mobile-1.4.0.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
     <script src="../js/async.js"></script>
     <script src="../js/moment.min.js"></script>
     <script src="../js/sprintf.min.js"></script>
     <script src="../js/gc.js"></script>
+    <script src="../js/conf.js"></script>
     <script src="./mobile.js"></script>
     <script>
       $(document).ready(function() {
