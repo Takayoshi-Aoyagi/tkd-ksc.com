@@ -119,26 +119,53 @@ var app = app || {};
 	
 	render: function () {
 	    var config = {
-		data: app.conf.FEE.month,
+		data: app.conf.FEE.regular,
 		paging: false,
 		ordering: false,
 		info: false,
 		searching: false,
 		aoColumns: [
-		    { "sTitle": "道場" },
-		    { "sTitle": "道場" },
-		    { "sTitle": "道場" },
-		    { "sTitle": "URL" }
+		    { "sTitle": "" },
+		    { "sTitle": "少年部", "width":"70%", "sClass": "right" },
+		    { "sTitle": "女子・学生", "width":"70%", "sClass": "right" },
+		    { "sTitle": "成年部", "width":"70%", "sClass": "right" }
 		]
 	    };
-	    $('#fee_table').DataTable(config);
+	    $('#regular_fee').DataTable(config);
+	}
+    });
+
+    app.CircleFeeView = Backbone.View.extend({
+	
+	el: '#fee_view',
+	
+	initialize: function () {
+	    this.render();
+	},
+	
+	render: function () {
+	    var config = {
+		data: app.conf.FEE.circle,
+		paging: false,
+		ordering: false,
+		info: false,
+		searching: false,
+		aoColumns: [
+		    { "sTitle": "" },
+		    { "sTitle": "少年部", "width":"70%", "sClass": "right" },
+		    { "sTitle": "女子・学生", "width":"70%", "sClass": "right" },
+		    { "sTitle": "成年部", "width":"70%", "sClass": "right" }
+		]
+	    };
+	    $('#circle_fee').DataTable(config);
 	}
     });
     
     app.init = function () {
 	app.schedules = new app.ScheduleCollection();
 	app.scheduleListView = new app.ScheduleListView();
-	app.feeView = new app.FeeView();
+	app.recularFeeView = new app.FeeView();
+	app.circleFeeView = new app.CircleFeeView();
 	app.schedules.on({
 	    reset: function () {
 		app.scheduleListView.clear();

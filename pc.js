@@ -29,44 +29,45 @@ var app = app || {};
     
     app.FeeTableView = Backbone.View.extend({
 
+	el: "#regular_fee",
+
 	initialize: function (options) {
 	    var config = {
-		data: options.dataset,
+		data: app.conf.FEE.regular,
 		paging: false,
 		ordering: false,
 		info: false,
 		searching: false,
 		aoColumns: [
 		    { "sTitle": "", "width": "120%" },
-		    { "sTitle": "幼年・少年部", "width": "120%", "sClass": "right"},
-		    { "sTitle": "女子部","width": "120%", "sClass": "right"},
-		    { "sTitle": "学生部","width": "120%", "sClass": "right"},
-		    { "sTitle": "成年部","width": "120%", "sClass": "right"}
+		    { "sTitle": "小学生以下", "width": "120%", "sClass": "right"},
+		    { "sTitle": "女子・学生","width": "120%", "sClass": "right"},
+		    { "sTitle": "成年男子","width": "120%", "sClass": "right"}
 		]
 	    };
-	    this.el = options.el;
 	    this.$el.DataTable(config);
 	}
     });
 
-    app.FeeView = Backbone.View.extend({
+    app.CircleFeeTableView = Backbone.View.extend({
 
-	el: '#fee_tabs',
+	el: "#circle_fee",
 
-	initialize: function () {
-	    var fee1 = new app.FeeTableView({
-		el: "#fee1",
-		dataset: app.conf.FEE["month"]
-	    });
-	    var fee2 = new app.FeeTableView({
-		el: "#fee2",
-		dataset: app.conf.FEE["half"]
-	    });
-	    var fee3 = new app.FeeTableView({
-		el: "#fee3",
-		dataset: app.conf.FEE["year"]
-	    });
-	    $("#fee_tabs").tabs();
+	initialize: function (options) {
+	    var config = {
+		data: app.conf.FEE.circle,
+		paging: false,
+		ordering: false,
+		info: false,
+		searching: false,
+		aoColumns: [
+		    { "sTitle": "", "width": "120%" },
+		    { "sTitle": "小学生以下", "width": "120%", "sClass": "right"},
+		    { "sTitle": "女子・学生","width": "120%", "sClass": "right"},
+		    { "sTitle": "成年男子","width": "120%", "sClass": "right"}
+		]
+	    };
+	    this.$el.DataTable(config);
 	}
     });
 
@@ -144,8 +145,9 @@ var app = app || {};
 	// Menu Tabs
         $('#tabs').tabs();
 
-	// Free Tabs
-	new app.FeeView();
+	// Free Tables
+	var regularFee = new app.FeeTableView();
+	var circleFee = new app.CircleFeeTableView();
 
 	// Links
 	new app.LinksTableView();

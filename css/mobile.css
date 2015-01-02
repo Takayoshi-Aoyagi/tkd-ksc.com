@@ -63,3 +63,7 @@ div .box {
     padding-left: 5px;
     line-height: 5%;
 }
+
+.right {
+    text-align: right;
+}
