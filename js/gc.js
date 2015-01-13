@@ -56,7 +56,7 @@ GoogleCalendar.prototype.getEvents = function (callback) {
 }
 
 GoogleCalendar.prototype.initialize = function (callback) {
-    if (!gapi || !gapi.cliet) {
+    if (!gapi || !gapi.client) {
 	callback("initialize failed");
 	return;
     }
