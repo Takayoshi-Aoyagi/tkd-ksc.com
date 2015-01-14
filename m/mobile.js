@@ -172,10 +172,12 @@ var app = app || {};
 		app.scheduleListView.render();
 	    }
 	});
-	
-	var gc = new GoogleCalendar(),
-	array = [];
-	gc.getEvents(function (err, events) {
+    };
+
+    app.initGC = function () {
+	var array = [];
+	app.gc = new GoogleCalendar();
+	app.gc.getEvents(function (err, events) {
 	    if (err || !events) {
 		return;
 	    }
@@ -184,5 +186,6 @@ var app = app || {};
 	    });
 	    app.schedules.reset(array);
 	});
-    };
+    }
 })();
+

@@ -5,6 +5,29 @@
     <meta name="keyword" content="テコンドー,武道,ITF,護身術,キック,フィットネス,ダイエット,韓国,埼玉県,川口市,蕨市">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <title> 金成哲テコンドー道場</title>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/underscore-min.js"></script>
+    <script src="../js/backbone-min.js"></script>
+    <script src="../js/jquery.mobile-1.4.0.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script src="../js/async.js"></script>
+    <script src="../js/moment.min.js"></script>
+    <script src="../js/sprintf.min.js"></script>
+    <script src="../js/gc.js"></script>
+    <script src="../js/conf.js"></script>
+    <script src="./mobile.js"></script>
+    <script>
+      function initGC () {
+        app.initGC();
+      }
+
+      $(document).ready(function() {
+        app.init();
+      });
+    </script>
+
+    <script src="https://apis.google.com/js/client.js?onload=initGC"></script>
+    
     <link rel="stylesheet" href="../css/jquery.mobile-1.4.0.min.css"/>
     <link rel="stylesheet" href="../css/mobile.css"/>
   </head>
@@ -197,11 +220,11 @@
 	    <p>道場での練習の模様です。</p>
 	    <h3>少年部</h3>
 	    <div class="video-container">
-	      <iframe src="//www.youtube.com/embed/OjT0HSRJ1s0" frameborder="0" allowfullscreen></iframe>
+	      <iframe src="http://www.youtube.com/embed/OjT0HSRJ1s0" frameborder="0" allowfullscreen></iframe>
 	    </div>
 	    <h3>成年部</h3>
 	    <div class="video-container">
-	      <iframe src="//www.youtube.com/embed/HfCz_BymfG8" frameborder="0" allowfullscreen></iframe>
+	      <iframe src="http://www.youtube.com/embed/HfCz_BymfG8" frameborder="0" allowfullscreen></iframe>
 	    </div>
 	  </div>
 	</div>
@@ -335,22 +358,5 @@
     <div data-role="footer" data-position="fixed">
       <h3><a target="_blank" href="http://tkd-ksc.com/?mode=pc">PC</a> | モバイル</h3>
     </div>
-    <script src="https://apis.google.com/js/client.js?onload=OnLoadCallback"></script>
-    <script src="../js/jquery-2.1.1.min.js"></script>
-    <script src="../js/underscore-min.js"></script>
-    <script src="../js/backbone-min.js"></script>
-    <script src="../js/jquery.mobile-1.4.0.min.js"></script>
-    <script src="../js/jquery.dataTables.min.js"></script>
-    <script src="../js/async.js"></script>
-    <script src="../js/moment.min.js"></script>
-    <script src="../js/sprintf.min.js"></script>
-    <script src="../js/gc.js"></script>
-    <script src="../js/conf.js"></script>
-    <script src="./mobile.js"></script>
-    <script>
-      $(document).ready(function() {
-        app.init();
-      });
-    </script>
   </body>
 </html>
