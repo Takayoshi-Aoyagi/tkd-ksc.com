@@ -1,0 +1,20 @@
+{
+  "name": "tkd-ksc.com",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Takayoshi-Aoyagi/tkd-ksc.com",
+  "authors": [
+    "Takayoshi Aoyagi <Takayoshi.Aoyagi@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "jquery": "~2.1.3"
+  }
+}

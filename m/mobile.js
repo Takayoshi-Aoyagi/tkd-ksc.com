@@ -161,6 +161,50 @@ var app = app || {};
 	}
     });
     
+    app.OverlayView = Backbone.View.extend({
+	
+	el: '#overlay',
+
+	initialize: function () {
+	},
+
+	render: function () {
+	    var html = "";
+	    html += '<div style="display:table-cell; vertical-align:middle;">';
+	    html += '<span style="color:#eee;">';
+	    html += '<h2 style="color:red;">道場開設15周年記念！</h2>';
+	    html += '<div class="event">'
+	    html += '<p style="color:blue; font-size:250%">３×５＝１５<p>';
+	    html += '<p style="color:blue; font-size:90%">さんごじゅうごキャンペーン</p>';
+	    html += '</div>';
+	    html += '<div style="margin-top:20px;"></div>';
+	    html += '<table align="center">';
+	    html += '<tr><td class="new_info" align="right"><span style="color:red; font-size:100%;">3</span></td><td>　</td><td align="left">4/1より<span style="color:red;">3</span>ヶ月</td></tr>';
+	    html += '<tr><td class="new_info" align="right"><span style="color:red; font-size:100%;">5</span></td><td>　</td><td align="left">先着<span style="color:red;">5</span>名様</td></tr>';
+	    html += '<tr><td class="new_info" align="right"><span style="color:red; font-size:100%;">15</span></td><td>　</td><td align="left">負担金<span style="color:red;">15</span>% (85%OFF)</td></tr>';
+	    html += '</table>';
+	    html += '</span>';
+	    html += '</div>';
+	    $(this.el).append(html);
+	},
+
+	events: {
+	    "click": "onClick"
+	},
+
+	onClick: function () {
+	    this.hide();
+	},
+	
+	show: function () {
+	    $(this.el).fadeIn();
+	},
+
+	hide: function () {
+	    $(this.el).fadeOut();
+	}
+    });
+
     app.init = function () {
 	app.schedules = new app.ScheduleCollection();
 	app.scheduleListView = new app.ScheduleListView();
@@ -172,6 +216,9 @@ var app = app || {};
 		app.scheduleListView.render();
 	    }
 	});
+	app.overlayView = new app.OverlayView();
+	app.overlayView.render();
+	app.overlayView.show();
     };
 
     app.initGC = function () {

@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="keyword" content="テコンドー,武道,ITF,護身術,キック,フィットネス,ダイエット,韓国,埼玉県,川口市,蕨市">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.0.min.css"/>
+    <link rel="stylesheet" href="../css/mobile.css"/>
+
     <title> 金成哲テコンドー道場</title>
-    <script src="../js/jquery-2.1.1.min.js"></script>
-    <script src="../js/underscore-min.js"></script>
-    <script src="../js/backbone-min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/underscore/underscore-min.js"></script>
+    <script src="../bower_components/backbone/backbone.js"></script>
     <script src="../js/jquery.mobile-1.4.0.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
     <script src="../js/async.js"></script>
@@ -27,9 +30,6 @@
     </script>
 
     <script src="https://apis.google.com/js/client.js?onload=initGC"></script>
-    
-    <link rel="stylesheet" href="../css/jquery.mobile-1.4.0.min.css"/>
-    <link rel="stylesheet" href="../css/mobile.css"/>
   </head>
   <body class="body">
     <!-- header -->
@@ -42,6 +42,9 @@
       
       <!-- TOP image -->
       <div class="image"><img src="../img/moai.jpg"></div>
+
+      <!-- overlay -->
+      <div id="overlay" style="display:table; width:100%;"></div>
 
       <!-- 道場紹介 -->
       <div data-role="collapsible" class="content" data-collapsed="false">
