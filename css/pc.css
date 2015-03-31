@@ -166,6 +166,38 @@ div.movie {
     float: left;
 }
 
+.new_info {
+    background-color: #FFC0CB;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    padding-right: 3px;
+    line-height: 5%;
+}
+.event {
+    background-color: #87CEFA;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-bottom: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    line-height: 5%;
+}
+
 .right {
     text-align: right;
+}
+
+#overlay{
+    display: none;
+    width: 100%;
+    height:100%;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: rgba(0,0,0,0.7);
 }

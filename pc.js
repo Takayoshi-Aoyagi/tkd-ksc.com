@@ -121,7 +121,64 @@ var app = app || {};
 	    });
 	}
     });
-    
+
+        app.OverlayView = Backbone.View.extend({
+	
+	el: '#overlay',
+
+	initialize: function () {
+	},
+
+	render: function () {
+	    var html = "";
+	    html += '<div style="display:table-cell; vertical-align:middle;">';
+	    html += '<span style="color:#eee;">';
+	    html += '<h2 style="color:red; font-size:200%">道場開設15周年記念！</h2>';
+	    html += '<div class="event">'
+	    html += '<p style="color:blue; font-size:350%">３×５＝１５<p>';
+	    html += '<p style="color:blue; font-size:150%">さんごじゅうごキャンペーン</p>';
+	    html += '</div>';
+	    html += '<div style="margin-top:20px;"></div>';
+	    html += '<table align="center">';
+	    html += '<tr><td class="new_info" align="right"><span style="color:red; font-size:200%;">3</span></td><td>　</td><td align="left">4/1より<span style="color:red;">3</span>ヶ月</td></tr>';
+	    html += '<tr><td class="new_info" align="right"><span style="color:red; font-size:200%;">5</span></td><td>　</td><td align="left">先着<span style="color:red;">5</span>名様</td></tr>';
+	    html += '<tr><td class="new_info" align="right"><span style="color:red; font-size:200%;">15</span></td><td>　</td><td align="left">負担金<span style="color:red;">15</span>% (85%OFF)</td></tr>';
+	    html += '</table>';
+	    html += '</span>';
+
+	    html += '<p style="color:white">入会時の初期費用が15% (85%OFF)</p>';
+	    html += '<table align="center" bgcolor="white">';
+	    html += '<tr><td> </td><td>少年部</td><td>女子・学生</td><td>成年部</td></tr>';
+	    html += '<tr><td>入会金</td><td>￥3,000</td><td>￥3,000</td><td>￥3,000</td></tr>';
+	    html += '<tr><td>月謝</td><td>￥5,000</td><td>￥6,500</td><td>￥7,500</td></tr>';
+	    html += '<tr><td>道衣</td><td>￥9,500</td><td>￥9,500</td><td>￥9,500</td></tr>';
+	    html += '<tr><td><s>合計(通常)</s></td><td><s>￥17,500</s></td><td><s>￥19,000</s></td><td><s>￥20,000</s></td></tr>';
+	    html += '<tr><td style="color:red;">合計(15%)</td><td style="color:red;">￥2,625</td><td style="color:red;">￥2,850</td><td style="color:red;">￥3,000</td></tr>';
+	    html += '</table>';
+
+	    html += '</div>';
+
+
+	    $(this.el).append(html);
+	},
+
+	events: {
+	    "click": "onClick"
+	},
+
+	onClick: function () {
+	    this.hide();
+	},
+	
+	show: function () {
+	    $(this.el).fadeIn();
+	},
+
+	hide: function () {
+	    $(this.el).fadeOut();
+	}
+    });
+
     app.init = function () {
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-25444755-1']);
@@ -151,5 +208,10 @@ var app = app || {};
 
 	// Links
 	new app.LinksTableView();
+
+	// overlay
+	var overlayView = new app.OverlayView();
+	overlayView.render();
+	overlayView.show();
     };
 })();
