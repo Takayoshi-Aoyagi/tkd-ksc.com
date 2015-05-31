@@ -135,7 +135,8 @@ var app = app || {};
 	    html += '<span style="color:#eee;">';
 	    html += '<h2 style="color:red; font-size:200%">道場開設15周年記念！</h2>';
 	    html += '<div class="event">'
-	    html += '<p style="color:blue; font-size:350%">３×５＝１５<p>';
+	    html += '<p style="color:red; font-size:250%">残り２名！</p>';
+	    html += '<p style="color:blue; font-size:350%">３×５＝１５/<p>';
 	    html += '<p style="color:blue; font-size:150%">さんごじゅうごキャンペーン</p>';
 	    html += '</div>';
 	    html += '<div style="margin-top:20px;"></div>';
