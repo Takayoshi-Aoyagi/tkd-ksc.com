@@ -133,17 +133,18 @@ var app = app || {};
 	    var html = "";
 	    html += '<div style="display:table-cell; vertical-align:middle;">';
 	    html += '<span style="color:#eee;">';
-	    html += '<h2 style="color:red; font-size:200%">道場開設15周年記念！</h2>';
+	    html += '<h2 style="color:red; font-size:200%">黒帯誕生キャンペーン</h2>';
 	    html += '<div class="event">'
-	    html += '<p style="color:red; font-size:250%">残り２名！</p>';
-	    html += '<p style="color:blue; font-size:350%">３×５＝１５/<p>';
-	    html += '<p style="color:blue; font-size:150%">さんごじゅうごキャンペーン</p>';
+
+	    html += '<p style="color:blue; font-size:130%">道場に新黒帯が２名誕生！</p>';
+	    html += '<p style="color:blue; font-size:100%">益々道場も活気づくことでしょう</p>';
+	    html += '<p style="color:blue; font-size:100%">２名誕生の記念キャンペーンを行います</p>';
+	    html += '<p style="color:red; font-size:120%">先着２名様まで</p>';
+	    html += '<p style="color:red; font-size:120%">初期費用15%(85%OFF)</p>';
+
 	    html += '</div>';
 	    html += '<div style="margin-top:20px;"></div>';
 	    html += '<table align="center">';
-	    html += '<tr><td class="new_info" align="right"><span style="color:red; font-size:200%;">3</span></td><td>　</td><td align="left">4/1より<span style="color:red;">3</span>ヶ月</td></tr>';
-	    html += '<tr><td class="new_info" align="right"><span style="color:red; font-size:200%;">5</span></td><td>　</td><td align="left">先着<span style="color:red;">5</span>名様</td></tr>';
-	    html += '<tr><td class="new_info" align="right"><span style="color:red; font-size:200%;">15</span></td><td>　</td><td align="left">負担金<span style="color:red;">15</span>% (85%OFF)</td></tr>';
 	    html += '</table>';
 	    html += '</span>';
 
