@@ -134,7 +134,7 @@ var app = app || {};
 	    html += '<div style="display:table-cell; vertical-align:middle;">';
 	    html += '<span style="color:#eee;">';
 	    html += '<h2 style="color:red; font-size:200%">黒帯誕生キャンペーン</h2>';
-	    html += '<div class="event">'
+	    html += '<div class="event">';
 
 	    html += '<p style="color:blue; font-size:130%">道場に新黒帯が２名誕生！</p>';
 	    html += '<p style="color:blue; font-size:100%">益々道場も活気づくことでしょう</p>';
