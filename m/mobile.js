@@ -216,10 +216,11 @@ var app = app || {};
 	});
 
 	// おしらせ
+	/*
 	app.overlayView = new app.OverlayView();
 	app.overlayView.render();
 	app.overlayView.show();
-
+	*/
     };
 
     app.initGC = function () {

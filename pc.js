@@ -213,7 +213,7 @@ var app = app || {};
 
 	// overlay
 	var overlayView = new app.OverlayView();
-	overlayView.render();
-	overlayView.show();
+	//overlayView.render();
+	//overlayView.show();
     };
 })();
