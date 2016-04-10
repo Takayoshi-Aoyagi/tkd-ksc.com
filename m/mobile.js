@@ -127,7 +127,6 @@ var app = app || {};
 		aoColumns: [
 		    { "sTitle": "" },
 		    { "sTitle": "少年部", "width":"70%", "sClass": "right" },
-		    { "sTitle": "女子・学生", "width":"70%", "sClass": "right" },
 		    { "sTitle": "成年部", "width":"70%", "sClass": "right" }
 		]
 	    };

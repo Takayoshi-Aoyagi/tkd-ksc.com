@@ -1,5 +1,4 @@
 var app = app || {};
-
 (function () {
 
     "use strict";
@@ -41,8 +40,7 @@ var app = app || {};
 		aoColumns: [
 		    { "sTitle": "", "width": "120%" },
 		    { "sTitle": "小学生以下", "width": "120%", "sClass": "right"},
-		    { "sTitle": "女子・学生","width": "120%", "sClass": "right"},
-		    { "sTitle": "成年男子","width": "120%", "sClass": "right"}
+		    { "sTitle": "成年男女","width": "120%", "sClass": "right"}
 		]
 	    };
 	    this.$el.DataTable(config);
