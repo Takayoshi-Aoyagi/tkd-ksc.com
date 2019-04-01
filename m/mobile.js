@@ -58,11 +58,13 @@ var app = app || {};
 	    classes = this.data['classes'],
 	    title,
 	    html = [];
+	    if (!loc) {
+		return
+	    }
 	    title = (function () {
-		var city,
-		arr = loc.split('市');
+		const arr = loc.split('市');
 		if (arr.length == 2) {
-		    city = arr[0];
+		    const city = arr[0];
 		    return sprintf("%s %sクラブ", date, city);
 		} else {
 		    return sprintf("%s %s", date, loc);
